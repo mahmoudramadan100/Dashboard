@@ -272,6 +272,7 @@ span.header {
   height: 100vh;
   background: #027F7C;
   justify-content: center;
+  flex-direction: column;
 }
 .main .nav .logo {
   color: #fff;
@@ -286,6 +287,8 @@ span.header {
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  height: 100vh;
+  justify-content: center;
 }
 .main .nav .menu li {
   padding: 10px 0;
@@ -701,7 +704,6 @@ span.header {
 @media (min-width: 1401px) and (max-width: 3000px) {
   .main .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
-    height: 100vh;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -761,7 +763,7 @@ span.header {
 @media (min-width: 0) and (max-width: 576px) {
   .swiper-button-prev, .swiper-rtl .swiper-button-next {
     right: 11%;
-    bottom: 13%;
+    bottom: 10%;
   }
 }
 
@@ -790,7 +792,7 @@ span.header {
 @media (min-width: 0) and (max-width: 576px) {
   .swiper-button-next, .swiper-rtl .swiper-button-prev {
     right: 11%;
-    bottom: 9%;
+    bottom: 7%;
   }
 }
 

@@ -4,6 +4,7 @@
 a {
     @include vendor-prefix(transition, all 0.3s);
 }
+
 span.header {
     position: absolute;
     top: 30px;
@@ -42,7 +43,9 @@ span.header {
     .nav {
         height: 100vh;
         background: $main-color;
-        justify-content: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        }
         .logo {
             color: $white-color;
             font-size: 18px;
@@ -56,6 +59,8 @@ span.header {
             flex-direction: column;            
             align-items: center;
             gap: 30px;
+            height: 100vh;
+            justify-content: center;
             li {
                 padding: 10px 0;
                 position: relative;
@@ -410,7 +415,6 @@ span.header {
         
         @include breakpoints(xxlarge) {
             grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
-            height: 100vh;
         }
         @include breakpoints(large) {
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -458,7 +462,7 @@ span.header {
     }
     @include breakpoints(xs) {
         right: 11%;
-        bottom: 13%;
+        bottom: 10%;
     }
 }
 .swiper-button-next, .swiper-rtl .swiper-button-prev {
@@ -478,7 +482,7 @@ span.header {
     }
     @include breakpoints(xs) {
         right: 11%;
-        bottom: 9%;
+        bottom: 7%;
     }
 }
 .swiper-button-next, .swiper-button-prev {
@@ -515,7 +519,7 @@ span.header {
     padding: 20px 35px;
     border-radius: 7px;
     @include breakpoints(xxlarge) {
-            right: 17%;
+        right: 17%;
     }
     @include breakpoints(md) {
         right: 15%;
@@ -524,6 +528,6 @@ span.header {
         padding: 15px 30px;
         }
     @include breakpoints(xs) {
-    padding: 10px 30px;
+        padding: 10px 30px;
     }
 }
