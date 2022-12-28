@@ -1,0 +1,442 @@
+@use "sass/index" as *;
+
+
+a {
+    @include vendor-prefix(transition, all 0.3s);
+}
+.width {
+    // width: 75px !important;
+    animation: show-menu 0.2s linear;
+    @include breakpoints(xs) {
+        height: 75px;
+    }
+}
+.main {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 100%;
+    // overflow: hidden;
+    .open-nav {
+        // width: 75px !important;
+        display: flex !important;
+        animation: show-menu 0.2s linear;
+        li {
+            opacity: 1 !important;
+        }
+        }
+    .close-nav {
+        width: 0;
+        display: none;
+        li {
+            opacity: 0;
+        }
+    }
+    .nav {
+        height: 100vh;
+        background: $main-color;
+        justify-content: center;
+        border-radius: 25px 0 0 25px;
+        .logo {
+            color: $white-color;
+            font-size: 18px;
+            text-align: center;
+            margin: 15px 10px 0;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+        .menu {
+            display: flex;
+            flex-direction: column;            
+            align-items: center;
+            gap: 30px;
+            li {
+                padding: 10px 0;
+                position: relative;
+                @include vendor-prefix(transition, all 0.3s);
+                animation: fade-left 0.8s linear;
+                a {
+                    font-size: 22px;
+                    color: #58c0b7;
+                    font-size: 22px;
+                    width: 20px;
+                    height: 20px;
+                    padding: 10px;
+                    &:hover {
+                        color: $white-color;
+                        span {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    left: 140%;
+                    translate: 0 -50%;
+                    padding: 10px;
+                    border-radius: 4px;
+                    color: #f9f9f9;
+                    background: rgba($main-color, 0.7);
+                    opacity: 0;
+                    visibility: hidden;
+                    font-size: 12px;
+                    font-weight: 200;
+                    letter-spacing: 2px;
+                    line-height: 1;
+                    transition: transitions;
+                    @include vendor-prefix(transition, all 0.3s);
+                } 
+            }
+        }
+    }
+    .dashboard {
+        width: 100%;
+        text-align: left;
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 40px;
+        overflow: hidden;
+        .content {
+            width: 100%;
+            padding: 10px 20px;
+            .header {
+                max-width: 25px;
+                max-height: 25px;
+                img {
+                    object-fit: contain;
+                    cursor: pointer;
+                    max-width: 25px;
+                    max-height: 25px;
+                    @include vendor-prefix(transition, all 0.3s);
+                }
+                &:hover {
+                    img {
+                        opacity: 0.5;
+                    }
+                }
+            }
+            .text {
+                color: $main-color;
+                text-transform: capitalize;
+                margin: 15px 0 30px;
+                h2 {
+                    font-size: 24px;
+                    margin: 0;
+                    font-weight: 500;
+                }
+                span {
+                    font-size: 14px;
+                    font-weight: 200;
+                }
+            }
+            .box {
+                margin: 20px 0;
+                max-width: 650px;
+                min-width: 550px;
+                display: flex;
+                background-color: $bg-color;
+                align-items: center;
+                @include vendor-prefix(border-radius, 10px);
+                @include vendor-prefix(transition, all 0.3s);
+                img {
+                    max-width: 120px;
+                    max-height: 120px;
+                    object-fit: contain;
+                    display: flex;
+                    justify-items: center;
+                    padding: 0 5px;
+                    @include breakpoints(sm) {
+                        max-width: 100px;
+                        max-height: 100px;
+                    }
+                    @include breakpoints(xs) {
+                        max-width: 100px;
+                        max-height: 100px;
+                    }
+                }
+                .content {
+                    color: $main-color;
+                    @include vendor-prefix(transition, all 0.4s);
+                    span {
+                        font-size: 15px;
+                        margin: 0;
+                        @include breakpoints(sm) {
+                            font-size: 13px;
+                        }
+                        @include breakpoints(xs) {
+                            font-size: 12px;
+                        }
+                    }
+                    h2 {
+                        font-size: 22px;
+                        margin: 5px 0;
+                        @include breakpoints(sm) {
+                            font-size: 18px;
+                            margin: 3px 0;
+                        }
+                        @include breakpoints(xs) {
+                            font-size: 17px;
+                            margin: 3px 0;
+                        }
+                    }
+                    .price {
+                        font-size: 18px;
+                        margin: 0;
+                        @include breakpoints(sm) {
+                            font-size: 14px;
+                        }
+                        @include breakpoints(xs) {
+                            font-size: 14px;
+                        }
+                    }
+                    .rate {
+                        font-size: 13px;
+                        .icon {
+                            font-size: 15px;
+                        }
+                        @include breakpoints(sm) {
+                            font-size: 12px;
+                        }
+                        @include breakpoints(xs) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+                &:hover {
+                    background-color: rgba($main-color, 0.5);
+                    cursor: pointer;
+                    .content {
+                    color: $white-color;
+                }
+            }
+            @include breakpoints(large) {
+               max-width: 100%;
+               min-width: 100%;
+            }
+            @include breakpoints(md) {
+                min-width: 385px;
+            }
+            @include breakpoints(sm) {
+                min-width: 385px;
+            }
+            }
+        }
+        .slider {
+            // width: 48%;
+            margin: 40px 10px;
+            position: relative;
+            // height: 500px;
+            .text {
+                position: absolute;
+                color: #fff;
+                font-weight: 500;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                z-index: 2;
+                height: 400px;
+                top: 18%;
+                left: 15%;
+                display: flex;
+                max-width: 100%;
+                span {
+                   color: $white-color;
+                   font-size: 1rem;
+                   text-transform: capitalize;
+                   @include breakpoints(sm) {
+                    font-size: 12px;
+                        }
+                   @include breakpoints(xs) {
+                    font-size: 12px;
+                        }
+                    }
+                h2 {
+                    margin: 20px 0;
+                    font-size: 4rem;
+                    text-transform: capitalize;
+                    letter-spacing: 3px;
+
+                    @include breakpoints(sm) {
+                        font-size: 20px;
+                        letter-spacing: 1px;
+                        margin: 10px 0;
+                    }
+                    @include breakpoints(xs) {
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                        margin: 10px 0;
+                    }
+                }
+                a {
+                    padding: 6px 30px;
+                    background: $white-color;
+                    color: $main-color;
+                    text-align: center;
+                    border-radius: 7px;
+                    text-transform: capitalize;
+                    font-size: 15px;
+                    margin-top: 30px;
+                    border: 1px solid transparent;
+                    @include vendor-prefix(transition, all 0.4s);
+                    &:hover {
+                       border: 1px solid rgba($main-color, 0.5);
+                       color: #fff;
+                       background-color: #58c0b7;
+                    }
+                    @include breakpoints(sm) {
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        padding-left: 10px;
+                        margin-top: 20px;
+                    }
+                    @include breakpoints(xs) {
+                        font-size: 12px;
+                        letter-spacing: 1px;
+                        padding-left: 10px;
+                        margin-top: 20px;
+                    }
+                }
+                @include breakpoints(large) {
+                    // height: 215px;
+                    left: 20%;
+                    top: 0;
+                }
+                @include breakpoints(sm) {
+                    height: 215px;
+                    left: 15%;
+                    top: 20%;
+                }
+                @include breakpoints(xs) {
+                    height: 215px;
+                    left: 10%;
+                    top: 0;
+                }
+            }
+            img {
+                max-width: 100%;
+                max-height: 750px;
+                // @include breakpoints(xlarge) {
+                //     max-height: 550px;
+                // }
+                // @include breakpoints(large) {
+                //     max-height: 500px;
+                // }
+                // @include breakpoints(md) {
+                //     max-height: 450px;
+                // }
+            }
+            @include breakpoints(large) {
+               margin-top: 80px;
+            }
+            @include breakpoints(sm) {
+                width: 95%;
+            }
+            @include breakpoints(xs) {
+                width: 90%;
+            }
+        }
+       
+        
+        @include breakpoints(xxlarge) {
+            grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+        }
+        @include breakpoints(large) {
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        }
+        @include breakpoints(sm) {
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        }
+        @include breakpoints(xs) {
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        }
+    }
+    
+    
+}
+
+
+.swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 0px;
+    left: auto;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: auto;
+    top: auto;
+    right: 11%;
+    bottom: 10%;
+    
+    @include breakpoints(sm) {
+        right: 11%;
+        bottom: 9%;
+    }
+    @include breakpoints(xs) {
+        right: 11%;
+        bottom: 13%;
+    }
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    left: auto;
+    top: auto;
+    right: 11%;
+    bottom: 8%;
+    
+    @include breakpoints(sm) {
+        bottom: 7%;
+        bottom: 7%;
+    }
+    @include breakpoints(xs) {
+        right: 11%;
+        bottom: 9%;
+    }
+}
+.swiper-button-next, .swiper-button-prev {
+    color: $main-color;
+    background: $white-color;
+    z-index: 99;
+}
+.swiper-button-next:after, .swiper-button-prev:after {
+    font-size: 10px;
+    width: 100%;
+}
+.swiper-pagination-bullet-active {
+    background-color: $main-color;
+}
+.swiper {
+    // width: 500px;
+    width: 100%;
+}
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal, 
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    bottom: 5%;
+    right: 9%;
+    max-width: 100%;
+    left: auto;
+    width: auto;
+    background: #fff;
+    padding: 20px 35px;
+    border-radius: 7px;
+    @include breakpoints(sm) {
+        padding: 15px 30px;
+        }
+    @include breakpoints(xs) {
+    padding: 15px 30px;
+    }
+}
