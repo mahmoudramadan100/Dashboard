@@ -271,10 +271,10 @@ span.header {
 .main .nav {
   height: 100vh;
   background: #027F7C;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
-.main .nav .logo {
+.main .logo {
   color: #fff;
   font-size: 18px;
   text-align: center;
@@ -282,7 +282,7 @@ span.header {
   text-transform: capitalize;
   font-weight: bold;
 }
-.main .nav .menu {
+.main .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -290,14 +290,14 @@ span.header {
   height: 100vh;
   justify-content: center;
 }
-.main .nav .menu li {
+.main .menu li {
   padding: 10px 0;
   position: relative;
   transition: all 0.3s;
   -webkit-animation: fade-left 0.8s linear;
           animation: fade-left 0.8s linear;
 }
-.main .nav .menu li a {
+.main .menu li a {
   font-size: 22px;
   color: #58c0b7;
   font-size: 22px;
@@ -305,14 +305,14 @@ span.header {
   height: 20px;
   padding: 10px;
 }
-.main .nav .menu li a:hover {
+.main .menu li a:hover {
   color: #fff;
 }
-.main .nav .menu li a:hover span {
+.main .menu li a:hover span {
   opacity: 1;
   visibility: visible;
 }
-.main .nav .menu li span {
+.main .menu li span {
   position: absolute;
   top: 50%;
   left: 140%;
@@ -330,7 +330,8 @@ span.header {
   transition: transitions;
   transition: all 0.3s;
 }
-.main .dashboard {
+
+.dashboard {
   width: 100%;
   text-align: left;
   display: grid;
@@ -338,18 +339,18 @@ span.header {
   gap: 40px;
   overflow: hidden;
 }
-.main .dashboard .content {
+.dashboard .content {
   width: 100%;
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.main .dashboard .content .header {
+.dashboard .content .header {
   max-width: 25px;
   max-height: 25px;
 }
-.main .dashboard .content .header img {
+.dashboard .content .header img {
   -o-object-fit: contain;
      object-fit: contain;
   cursor: pointer;
@@ -357,49 +358,49 @@ span.header {
   max-height: 25px;
   transition: all 0.3s;
 }
-.main .dashboard .content .header:hover img {
+.dashboard .content .header:hover img {
   opacity: 0.5;
 }
-.main .dashboard .content .text {
+.dashboard .content .text {
   color: #027F7C;
   text-transform: capitalize;
   margin: 60px 0 30px;
 }
-.main .dashboard .content .text h2 {
+.dashboard .content .text h2 {
   font-size: 24px;
   margin: 0;
   font-weight: 500;
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .text h2 {
+  .dashboard .content .text h2 {
     margin: 20px 0;
   }
 }
-.main .dashboard .content .text span {
+.dashboard .content .text span {
   font-size: 14px;
   font-weight: 200;
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .text span {
+  .dashboard .content .text span {
     margin: 20px 0;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .main .dashboard .content .text {
+  .dashboard .content .text {
     margin: 0 auto 25px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .text {
+  .dashboard .content .text {
     margin: 0 auto 25px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .text {
+  .dashboard .content .text {
     margin: 0 auto 25px;
   }
 }
-.main .dashboard .content .box {
+.dashboard .content .box {
   margin: 20px 0;
   max-width: 650px;
   min-width: 550px;
@@ -409,7 +410,7 @@ span.header {
   border-radius: 10px;
   transition: all 0.3s;
 }
-.main .dashboard .content .box img {
+.dashboard .content .box img {
   max-width: 120px;
   max-height: 120px;
   -o-object-fit: contain;
@@ -419,113 +420,113 @@ span.header {
   padding: 0 5px;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box img {
+  .dashboard .content .box img {
     max-width: 70px;
     max-height: 70px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box img {
+  .dashboard .content .box img {
     max-width: 70px;
     max-height: 70px;
   }
 }
-.main .dashboard .content .box .content {
+.dashboard .content .box .content {
   color: #027F7C;
   transition: all 0.4s;
 }
-.main .dashboard .content .box .content span {
+.dashboard .content .box .content span {
   font-size: 15px;
   margin: 0;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box .content span {
+  .dashboard .content .box .content span {
     font-size: 13px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box .content span {
+  .dashboard .content .box .content span {
     font-size: 12px;
   }
 }
-.main .dashboard .content .box .content h2 {
+.dashboard .content .box .content h2 {
   font-size: 22px;
   margin: 5px 0;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box .content h2 {
+  .dashboard .content .box .content h2 {
     font-size: 18px;
     margin: 3px 0;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box .content h2 {
+  .dashboard .content .box .content h2 {
     font-size: 17px;
     margin: 3px 0;
   }
 }
-.main .dashboard .content .box .content .price {
+.dashboard .content .box .content .price {
   font-size: 18px;
   margin: 0;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box .content .price {
+  .dashboard .content .box .content .price {
     font-size: 14px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box .content .price {
+  .dashboard .content .box .content .price {
     font-size: 14px;
   }
 }
-.main .dashboard .content .box .content .rate {
+.dashboard .content .box .content .rate {
   font-size: 13px;
 }
-.main .dashboard .content .box .content .rate .icon {
+.dashboard .content .box .content .rate .icon {
   font-size: 15px;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box .content .rate .icon {
+  .dashboard .content .box .content .rate .icon {
     font-size: 12px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box .content .rate .icon {
+  .dashboard .content .box .content .rate .icon {
     font-size: 12px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box .content .rate {
+  .dashboard .content .box .content .rate {
     font-size: 12px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box .content .rate {
+  .dashboard .content .box .content .rate {
     font-size: 12px;
   }
 }
-.main .dashboard .content .box:hover {
+.dashboard .content .box:hover {
   background-color: rgba(2, 127, 124, 0.5);
   cursor: pointer;
 }
-.main .dashboard .content .box:hover .content {
+.dashboard .content .box:hover .content {
   color: #fff;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .main .dashboard .content .box {
+  .dashboard .content .box {
     max-width: 100%;
     min-width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .main .dashboard .content .box {
+  .dashboard .content .box {
     max-width: 80%;
     min-width: 60%;
     margin: 10px auto;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content .box {
+  .dashboard .content .box {
     max-width: 100%;
     max-width: 70%;
     min-width: 60%;
@@ -533,28 +534,28 @@ span.header {
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content .box {
+  .dashboard .content .box {
     max-width: 90%;
     min-width: 90%;
     margin: 7px auto;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .main .dashboard .content {
+  .dashboard .content {
     order: 2;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .content {
+  .dashboard .content {
     order: 2;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .content {
+  .dashboard .content {
     order: 2;
   }
 }
-.main .dashboard .slider {
+.dashboard .slider {
   margin: 40px 10px;
   position: relative;
   display: flex;
@@ -562,7 +563,7 @@ span.header {
   justify-content: center;
   height: 100vh;
 }
-.main .dashboard .slider .text {
+.dashboard .slider .text {
   position: absolute;
   color: #fff;
   font-weight: 500;
@@ -576,42 +577,42 @@ span.header {
   display: flex;
   max-width: 100%;
 }
-.main .dashboard .slider .text span {
+.dashboard .slider .text span {
   color: #fff;
   font-size: 1rem;
   text-transform: capitalize;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .slider .text span {
+  .dashboard .slider .text span {
     font-size: 12px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .slider .text span {
+  .dashboard .slider .text span {
     font-size: 12px;
   }
 }
-.main .dashboard .slider .text h2 {
+.dashboard .slider .text h2 {
   margin: 20px 0;
   font-size: 4rem;
   text-transform: capitalize;
   letter-spacing: 3px;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .slider .text h2 {
+  .dashboard .slider .text h2 {
     font-size: 20px;
     letter-spacing: 1px;
     margin: 10px 0;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .slider .text h2 {
+  .dashboard .slider .text h2 {
     font-size: 18px;
     letter-spacing: 1px;
     margin: 10px 0;
   }
 }
-.main .dashboard .slider .text a {
+.dashboard .slider .text a {
   padding: 6px 30px;
   background: #fff;
   color: #027F7C;
@@ -623,13 +624,13 @@ span.header {
   border: 1px solid transparent;
   transition: all 0.4s;
 }
-.main .dashboard .slider .text a:hover {
+.dashboard .slider .text a:hover {
   border: 1px solid rgba(2, 127, 124, 0.5);
   color: #fff;
   background-color: #58c0b7;
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .slider .text a {
+  .dashboard .slider .text a {
     font-size: 12px;
     letter-spacing: 1px;
     padding-left: 10px;
@@ -637,7 +638,7 @@ span.header {
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .slider .text a {
+  .dashboard .slider .text a {
     font-size: 12px;
     letter-spacing: 1px;
     padding-left: 10px;
@@ -645,49 +646,49 @@ span.header {
   }
 }
 @media (min-width: 1401px) and (max-width: 3000px) {
-  .main .dashboard .slider .text {
+  .dashboard .slider .text {
     left: 20%;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .main .dashboard .slider .text {
+  .dashboard .slider .text {
     left: 20%;
     top: 15%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .slider .text {
+  .dashboard .slider .text {
     height: 215px;
     left: 15%;
     top: 20%;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .slider .text {
+  .dashboard .slider .text {
     height: 215px;
     left: 10%;
     top: 0;
   }
 }
-.main .dashboard .slider img {
+.dashboard .slider img {
   max-width: 100%;
   max-height: 750px;
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .main .dashboard .slider {
+  .dashboard .slider {
     margin-top: 80px;
     height: 100vh;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .main .dashboard .slider {
+  .dashboard .slider {
     order: 1;
     margin-top: 80px;
     max-height: 700px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard .slider {
+  .dashboard .slider {
     width: 95%;
     order: 1;
     margin-top: 80px;
@@ -695,31 +696,31 @@ span.header {
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard .slider {
+  .dashboard .slider {
     order: 1;
     margin-top: 80px;
     max-height: 450px;
   }
 }
 @media (min-width: 1401px) and (max-width: 3000px) {
-  .main .dashboard {
+  .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
-  .main .dashboard {
+  .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     gap: 0;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
-  .main .dashboard {
+  .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
     gap: 0;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
-  .main .dashboard {
+  .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 0;
   }
