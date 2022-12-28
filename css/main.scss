@@ -4,12 +4,16 @@
 a {
     @include vendor-prefix(transition, all 0.3s);
 }
-.width {
-    // width: 75px !important;
-    animation: show-menu 0.2s linear;
-    @include breakpoints(xs) {
-        height: 75px;
+span.header {
+    position: absolute;
+    top: 30px;
+    @include breakpoints(xxlarge) {
+         position: absolute;
+        top: 30px;
     }
+}
+.open {
+    overflow: hidden !important;
 }
 .main {
     padding: 0;
@@ -22,6 +26,7 @@ a {
         // width: 75px !important;
         display: flex !important;
         animation: show-menu 0.2s linear;
+        overflow: hidden !important;
         li {
             opacity: 1 !important;
         }
@@ -29,6 +34,7 @@ a {
     .close-nav {
         width: 0;
         display: none;
+         animation: show-menu 0.2s linear;
         li {
             opacity: 0;
         }
@@ -37,7 +43,6 @@ a {
         height: 100vh;
         background: $main-color;
         justify-content: center;
-        border-radius: 25px 0 0 25px;
         .logo {
             color: $white-color;
             font-size: 18px;
@@ -103,6 +108,9 @@ a {
         .content {
             width: 100%;
             padding: 10px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;   
             .header {
                 max-width: 25px;
                 max-height: 25px;
@@ -122,15 +130,30 @@ a {
             .text {
                 color: $main-color;
                 text-transform: capitalize;
-                margin: 15px 0 30px;
+                margin: 60px 0 30px;
                 h2 {
                     font-size: 24px;
                     margin: 0;
                     font-weight: 500;
+                    @include breakpoints(xs) {
+                        margin: 20px 0;
+                    }
                 }
                 span {
                     font-size: 14px;
                     font-weight: 200;
+                    @include breakpoints(xs) {
+                        margin: 20px 0;
+                    }
+                }
+                @include breakpoints(md) {
+                    margin: 0 auto 25px;
+                }
+                @include breakpoints(sm) {
+                    margin: 0 auto 25px;
+                }
+                @include breakpoints(xs) {
+                    margin: 0 auto 25px;
                 }
             }
             .box {
@@ -150,12 +173,12 @@ a {
                     justify-items: center;
                     padding: 0 5px;
                     @include breakpoints(sm) {
-                        max-width: 100px;
-                        max-height: 100px;
+                        max-width: 70px;
+                        max-height: 70px;
                     }
                     @include breakpoints(xs) {
-                        max-width: 100px;
-                        max-height: 100px;
+                        max-width: 70px;
+                        max-height: 70px;
                     }
                 }
                 .content {
@@ -197,6 +220,12 @@ a {
                         font-size: 13px;
                         .icon {
                             font-size: 15px;
+                            @include breakpoints(sm) {
+                                font-size: 12px;
+                            }
+                            @include breakpoints(xs) {
+                                font-size: 12px;
+                            }
                         }
                         @include breakpoints(sm) {
                             font-size: 12px;
@@ -218,17 +247,40 @@ a {
                min-width: 100%;
             }
             @include breakpoints(md) {
-                min-width: 385px;
+                max-width: 80%;
+               min-width: 60%;
+               margin: 10px auto;
             }
             @include breakpoints(sm) {
-                min-width: 385px;
+                max-width: 100%;
+                max-width: 70%;
+                min-width: 60%;
+                margin: 7px auto;
             }
+            @include breakpoints(xs) {
+                max-width: 90%;
+                min-width: 90%;
+                margin: 7px auto;
+            }
+            }
+            @include breakpoints(md) {
+                order: 2;
+            }
+            @include breakpoints(sm) {
+                order: 2;
+            }
+            @include breakpoints(xs) {
+                order: 2;
             }
         }
         .slider {
             // width: 48%;
             margin: 40px 10px;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
             // height: 500px;
             .text {
                 position: absolute;
@@ -300,10 +352,14 @@ a {
                         margin-top: 20px;
                     }
                 }
+                @include breakpoints(xxlarge) {
+                    // height: 215px;
+                    left: 20%;
+                }
                 @include breakpoints(large) {
                     // height: 215px;
                     left: 20%;
-                    top: 0;
+                    top: 15%;
                 }
                 @include breakpoints(sm) {
                     height: 215px;
@@ -331,27 +387,42 @@ a {
             }
             @include breakpoints(large) {
                margin-top: 80px;
+               height: 100vh;
+            }
+            @include breakpoints(md) {
+                 order: 1;
+                 margin-top: 80px;
+                 max-height: 700px;
             }
             @include breakpoints(sm) {
                 width: 95%;
+                 order: 1;
+                 margin-top: 80px;
+                 max-height: 650px;
             }
             @include breakpoints(xs) {
-                width: 90%;
+                order: 1;
+                margin-top: 80px;
+                max-height: 450px;
             }
         }
        
         
         @include breakpoints(xxlarge) {
             grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+            height: 100vh;
         }
         @include breakpoints(large) {
             grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 0;
         }
         @include breakpoints(sm) {
             grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 0;
         }
         @include breakpoints(xs) {
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0;
         }
     }
     
@@ -375,7 +446,12 @@ a {
     top: auto;
     right: 11%;
     bottom: 10%;
-    
+    @include breakpoints(xxlarge) {
+        right: 18%;
+    }
+    @include breakpoints(md) {
+        right: 16%;
+    }
     @include breakpoints(sm) {
         right: 11%;
         bottom: 9%;
@@ -390,7 +466,12 @@ a {
     top: auto;
     right: 11%;
     bottom: 8%;
-    
+    @include breakpoints(xxlarge) {
+        right: 18%;
+    }
+    @include breakpoints(md) {
+        right: 16%;
+    }
     @include breakpoints(sm) {
         bottom: 7%;
         bottom: 7%;
@@ -413,8 +494,8 @@ a {
     background-color: $main-color;
 }
 .swiper {
-    // width: 500px;
     width: 100%;
+    max-height: 100%;
 }
 .swiper-slide {
     display: flex;
@@ -433,10 +514,16 @@ a {
     background: #fff;
     padding: 20px 35px;
     border-radius: 7px;
+    @include breakpoints(xxlarge) {
+            right: 17%;
+    }
+    @include breakpoints(md) {
+        right: 15%;
+    }
     @include breakpoints(sm) {
         padding: 15px 30px;
         }
     @include breakpoints(xs) {
-    padding: 15px 30px;
+    padding: 10px 30px;
     }
 }

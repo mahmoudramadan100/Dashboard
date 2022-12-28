@@ -228,14 +228,19 @@ a {
   transition: all 0.3s;
 }
 
-.width {
-  -webkit-animation: show-menu 0.2s linear;
-          animation: show-menu 0.2s linear;
+span.header {
+  position: absolute;
+  top: 30px;
 }
-@media (min-width: 0) and (max-width: 576px) {
-  .width {
-    height: 75px;
+@media (min-width: 1401px) and (max-width: 3000px) {
+  span.header {
+    position: absolute;
+    top: 30px;
   }
+}
+
+.open {
+  overflow: hidden !important;
 }
 
 .main {
@@ -249,6 +254,7 @@ a {
   display: flex !important;
   -webkit-animation: show-menu 0.2s linear;
           animation: show-menu 0.2s linear;
+  overflow: hidden !important;
 }
 .main .open-nav li {
   opacity: 1 !important;
@@ -256,6 +262,8 @@ a {
 .main .close-nav {
   width: 0;
   display: none;
+  -webkit-animation: show-menu 0.2s linear;
+          animation: show-menu 0.2s linear;
 }
 .main .close-nav li {
   opacity: 0;
@@ -264,7 +272,6 @@ a {
   height: 100vh;
   background: #027F7C;
   justify-content: center;
-  border-radius: 25px 0 0 25px;
 }
 .main .nav .logo {
   color: #fff;
@@ -331,6 +338,9 @@ a {
 .main .dashboard .content {
   width: 100%;
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .main .dashboard .content .header {
   max-width: 25px;
@@ -350,16 +360,41 @@ a {
 .main .dashboard .content .text {
   color: #027F7C;
   text-transform: capitalize;
-  margin: 15px 0 30px;
+  margin: 60px 0 30px;
 }
 .main .dashboard .content .text h2 {
   font-size: 24px;
   margin: 0;
   font-weight: 500;
 }
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content .text h2 {
+    margin: 20px 0;
+  }
+}
 .main .dashboard .content .text span {
   font-size: 14px;
   font-weight: 200;
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content .text span {
+    margin: 20px 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main .dashboard .content .text {
+    margin: 0 auto 25px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main .dashboard .content .text {
+    margin: 0 auto 25px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content .text {
+    margin: 0 auto 25px;
+  }
 }
 .main .dashboard .content .box {
   margin: 20px 0;
@@ -382,14 +417,14 @@ a {
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main .dashboard .content .box img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 70px;
+    max-height: 70px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .main .dashboard .content .box img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 70px;
+    max-height: 70px;
   }
 }
 .main .dashboard .content .box .content {
@@ -447,6 +482,16 @@ a {
   font-size: 15px;
 }
 @media (min-width: 576px) and (max-width: 767px) {
+  .main .dashboard .content .box .content .rate .icon {
+    font-size: 12px;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content .box .content .rate .icon {
+    font-size: 12px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
   .main .dashboard .content .box .content .rate {
     font-size: 12px;
   }
@@ -471,17 +516,48 @@ a {
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .main .dashboard .content .box {
-    min-width: 385px;
+    max-width: 80%;
+    min-width: 60%;
+    margin: 10px auto;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main .dashboard .content .box {
-    min-width: 385px;
+    max-width: 100%;
+    max-width: 70%;
+    min-width: 60%;
+    margin: 7px auto;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content .box {
+    max-width: 90%;
+    min-width: 90%;
+    margin: 7px auto;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main .dashboard .content {
+    order: 2;
+  }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  .main .dashboard .content {
+    order: 2;
+  }
+}
+@media (min-width: 0) and (max-width: 576px) {
+  .main .dashboard .content {
+    order: 2;
   }
 }
 .main .dashboard .slider {
   margin: 40px 10px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
 }
 .main .dashboard .slider .text {
   position: absolute;
@@ -565,10 +641,15 @@ a {
     margin-top: 20px;
   }
 }
+@media (min-width: 1401px) and (max-width: 3000px) {
+  .main .dashboard .slider .text {
+    left: 20%;
+  }
+}
 @media (min-width: 992px) and (max-width: 1200px) {
   .main .dashboard .slider .text {
     left: 20%;
-    top: 0;
+    top: 15%;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
@@ -592,36 +673,53 @@ a {
 @media (min-width: 992px) and (max-width: 1200px) {
   .main .dashboard .slider {
     margin-top: 80px;
+    height: 100vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .main .dashboard .slider {
+    order: 1;
+    margin-top: 80px;
+    max-height: 700px;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main .dashboard .slider {
     width: 95%;
+    order: 1;
+    margin-top: 80px;
+    max-height: 650px;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .main .dashboard .slider {
-    width: 90%;
+    order: 1;
+    margin-top: 80px;
+    max-height: 450px;
   }
 }
 @media (min-width: 1401px) and (max-width: 3000px) {
   .main .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+    height: 100vh;
   }
 }
 @media (min-width: 992px) and (max-width: 1200px) {
   .main .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 0;
   }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .main .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 0;
   }
 }
 @media (min-width: 0) and (max-width: 576px) {
   .main .dashboard {
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0;
   }
 }
 
@@ -644,6 +742,16 @@ a {
   right: 11%;
   bottom: 10%;
 }
+@media (min-width: 1401px) and (max-width: 3000px) {
+  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    right: 18%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-button-prev, .swiper-rtl .swiper-button-next {
+    right: 16%;
+  }
+}
 @media (min-width: 576px) and (max-width: 767px) {
   .swiper-button-prev, .swiper-rtl .swiper-button-next {
     right: 11%;
@@ -662,6 +770,16 @@ a {
   top: auto;
   right: 11%;
   bottom: 8%;
+}
+@media (min-width: 1401px) and (max-width: 3000px) {
+  .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 18%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 16%;
+  }
 }
 @media (min-width: 576px) and (max-width: 767px) {
   .swiper-button-next, .swiper-rtl .swiper-button-prev {
@@ -693,6 +811,7 @@ a {
 
 .swiper {
   width: 100%;
+  max-height: 100%;
 }
 
 .swiper-slide {
@@ -713,6 +832,22 @@ a {
   padding: 20px 35px;
   border-radius: 7px;
 }
+@media (min-width: 1401px) and (max-width: 3000px) {
+  .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    right: 17%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    right: 15%;
+  }
+}
 @media (min-width: 576px) and (max-width: 767px) {
   .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal,
@@ -726,6 +861,6 @@ a {
 .swiper-pagination-bullets.swiper-pagination-horizontal,
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
-    padding: 15px 30px;
+    padding: 10px 30px;
   }
 }/*# sourceMappingURL=main.css.map */
